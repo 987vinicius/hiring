@@ -1,26 +1,129 @@
-# Background
+# README
 
-Um novo cliente contratou a Alive para desenvolver uma loja virtual especializada na venda de aparelhos de telefonia celular. Para criar o inventário inicial da loja, com todos os telefones disponíveis, o estoque e seus preços, enviou arquivos CSV com os dados a incluir. Informou também que periodicamente precisará atualizar o inventário com planilhas idênticas.
+# Projeto Alive Commerce
+**Sistema de Cadastro de smartphones por importação CSV**
 
-Para facilitar esse processo, é necessário criar uma interface para upload desses arquivos, e uma segunda interface que permita que a pessoa avalie o inventário da loja, mostrando aparelhos, valores e quantidades, assim como dando a possibilidade de aplicar alguns filtros.
+## Instalação
 
-# Requisitos
+### Linux (Ubuntu 18.04) ou Windows 10 com WSL
 
-1. O usuário fará upload de um arquivo .csv no formato fornecido em `input_valid` através de um formulário;
-2. Os dados contidos no arquivo serão normalizados e salvos em um banco de dados relacional;
-3. O usuário será redirecionado para a página com o inventário, que indicará o sucesso ou falha da importação (preferencialmente com o motivo, no caso de falha);
-4. O usuário poderá visualizar os dados importados e buscá-los por fabricante, modelo e modalidade de venda (pré- ou pós-pago).
+1. Atualize o sistema operacional:
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
+2. Instale os seguintes pacotes:
+```
+$ sudo apt-get install -y build-essential autoconf bison libssl-dev libyaml-dev libreadline-dev zlib1g-dev
+libncurses5-dev libffi-dev libgdbm-dev libpq-dev curl ruby-full`
+```
 
-# Observações:
+#### Git
 
-- A aplicação deve ser feita usando ferramentas do universo Ruby (Rails, Sinatra, Roda, Cuba, Hanami, etc);
-- Não é necessário se preocupar com autenticação;
-- Aspectos estéticos não são primordiais;
-- A aplicação deverá ter testes automatizados.
+3. Instale o Git:
+```
+$ sudo apt-get install git
+```
 
-# Procedimento para entrega do teste:
+4. Instalando a versão do Ruby desejada
+```
+$ rvm install 2.7.4
+```
 
-1. Faça o fork desse projeto no github;
-2. Codifique a aplicação nesse fork;
-3. Escreva um README explicando como rodar sua aplicação e os testes. Dê o máximo de detalhes;
-4. Abra um pull request quando estiver pronto.
+5. Verifique a versão instalada
+```
+$ rvm list
+```
+
+6. Use uma versão específica e a torne padrão
+```
+$ rvm use 2.7.4 --default
+```
+
+#### Rails
+
+7. Instale o Rails
+```
+$ gem install rails -v 5.2
+```
+
+8. Verifique se o Rails foi instalado
+```
+$ rails -v
+```
+
+#### NodeJS
+
+9. Instale o NodeJS
+```
+$ sudo apt-get install nodejs
+```
+
+10. Verifique se o NodeJS foi instalado
+```
+$ nodejs --version
+```
+
+11. Instale o NPM
+```
+$ sudo apt install npm
+```
+
+#### Yarn
+
+12. Instale o Yarn
+```
+$ npm install --global yarn
+```
+
+13. Verifique se o Yarn foi instalado
+```
+$ yarn --version
+```
+
+#### PostgreSQL
+
+14. Instale o PostgreSQL
+```
+$ sudo apt-get install postgresql postgresql-contrib libpq-dev
+```
+
+15. Verifique se o PostgreSQL foi instalado
+```
+$ psql --version
+```
+
+#### Bundler
+
+16. Instale o gerenciador de pacotes do Ruby:
+```
+$ gem install bundler:2.2.32
+```
+
+#### Configurações
+
+17. Crie o arquivo `config/database.yml`
+
+18. Instale as dependências JavaScript:
+```
+$ yarn install 1.22.15
+```
+
+#### Iniciando
+
+19. Inicie a aplicação:
+```
+$ rails s
+
+$ bundle install
+
+$ rails db:create
+
+$ rails db:migrate
+```
+
+### Requisitos
+- Ruby-2.7.4
+- Rails 5.2.0
+- Node v17.1.0
+- Yarn 1.22.15

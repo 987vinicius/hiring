@@ -1,0 +1,25 @@
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MENU PRINCIPAL</li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-list"></i><span>SMARTPHONE</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <% if user_signed_in? %>
+                <li> <%= link_to PhoneArquivo.model_name.human.pluralize, phone_arquivos_path %></li>
+             <% end %>
+             <li>	<%= link_to Phone.model_name.human.pluralize, phones_path %></li>
+            </ul>
+          </li>
+
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
